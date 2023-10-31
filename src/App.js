@@ -1,24 +1,32 @@
-import logo from './logo.svg';
+import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap/dist/js/bootstrap.bundle"
 import './App.css';
+import NAvbar from "./component/Navbar";
+import { BrowserRouter , Routes ,Route } from "react-router-dom";
+import Home from "./component/Home";
+import Contact from "./component/Contact";
+import About from "./component/About";
+import Work from "./component/Work";
+// import "./Moon.svg"
 
+// import game from "./tic-tac-toe/game"
+
+alert("Sorry Portfolio is not completed yet but You can visit remain profile of mine and please give me your feedback")
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <>
+   <BrowserRouter>
+   <NAvbar/>
+   <Routes>
+    <Route path="/" Component={Home} />
+    <Route path="/contact" Component={Contact} />
+    <Route path="/about"Component={About} />
+    <Route path="/work" Component={Work} />
+    {/* <Route path="/game" Component={Game} /> */}
+    {/* <Redirect to="/" /> */}
+   </Routes>
+   </BrowserRouter>
+   </>
   );
 }
 
